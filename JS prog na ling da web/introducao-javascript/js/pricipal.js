@@ -6,35 +6,44 @@
 // x.textContent = "Mudou"
 
 
-let paciente = document.querySelector("#primeiro-paciente")
-let peso = paciente.querySelector(".info-peso").textContent
+let pacientes = document.querySelectorAll(".paciente") // querySelectorAll return all de elementes, return one array with all the elementes with class
 
-let altura = paciente.querySelector(".info-altura").textContent
-// console.log(paciente)
-let tdImc = paciente.querySelector(".info-imc")
+for(let i =0; i<pacientes.length; i++){
 
-let pesoEhValido = true;
-let alturaEhValido = true;
+    let paciente = pacientes[i]
 
-if(peso < 0 || peso > 1000){
-    console.log("peso invalido")
-    pesoEhValido = false;
-    tdImc.textContent = "peso invalido"
-}
+    let peso = paciente.querySelector(".info-peso").textContent
 
-if(altura < 0 || altura > 3.00){
-    console.log("Altura invalida")
-    alturaEhValido = false;
-    tdImc.textContent = "Altura invalida"
-}
-
-if(pesoEhValido && alturaEhValido){ // run if requisitions for true
-
-    let imc = peso/(altura*altura)
-
-    console.log(imc)
+    let altura = paciente.querySelector(".info-altura").textContent
+    // console.log(paciente)
+    let tdImc = paciente.querySelector(".info-imc")
     
-   
+    let pesoEhValido = true;
+    let alturaEhValido = true;
     
-    tdImc.textContent = imc
+    if(peso < 0 || peso > 1000){
+        console.log("peso invalido")
+        pesoEhValido = false;
+        tdImc.textContent = "peso invalido"
+    }
+    
+    if(altura < 0 || altura > 3.00){
+        console.log("Altura invalida")
+        alturaEhValido = false;
+        tdImc.textContent = "Altura invalida"
+    }
+    
+    if(pesoEhValido && alturaEhValido){ // run if requisitions for true
+    
+        let imc = peso/(altura*altura)
+    
+        console.log(imc)
+        
+       
+        
+        tdImc.textContent = imc.toFixed(2) // toFixed limited decimal
+    }
+    
+
 }
+
