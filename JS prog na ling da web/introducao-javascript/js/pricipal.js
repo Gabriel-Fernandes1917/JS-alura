@@ -25,12 +25,15 @@ for(let i =0; i<pacientes.length; i++){
         console.log("peso invalido")
         pesoEhValido = false;
         tdImc.textContent = "peso invalido"
+        //paciente.style.backgroundColor = "lightcoral"; // style is one param for input elements in to CSS. ex : style.backgroundColor = "blue"
+        paciente.classList.add("pacienteInvalido")// classList is one param for change the class css for JS. 
     }
     
     if(altura < 0 || altura > 3.00){
         console.log("Altura invalida")
         alturaEhValido = false;
         tdImc.textContent = "Altura invalida"
+        paciente.classList.add("pacienteInvalido") 
     }
     
     if(pesoEhValido && alturaEhValido){ // run if requisitions for true
